@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
@@ -10,14 +10,19 @@ export const Login = () => {
 
     return email.length * 100;
   }, [email.length])
+
   // const navigate = useNavigate();
   // const handleClick = () => {
   //   navigate('/pagina-inicial')
   // }
-  const handleEntrar = () => {
+  const handleEntrar = useCallback(() => {
     console.log(email);
     console.log(senha);
-  }
+  }, [email, senha]) // com o useCallback, as funcões dentro dela não são reconstruídas até que as dependencias serem chamadas;
+  // const handleEntrar = () => {
+  //   console.log(email);
+  //   console.log(senha);
+  // }
   return (
     <div>
       <form action="">

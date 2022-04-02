@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
+import { ButtonLogin } from './components/ButtonLogin'
 import { InputLogin } from './components/InputLogin'
 // import { useNavigate } from 'react-router-dom'
 
@@ -66,7 +67,9 @@ export const Login = () => {
             type="password"
           /> */}
         {/* </label> */}
-        <button onClick={handleEntrar} type='button'>Entrar</button>
+        <ButtonLogin onClick={handleEntrar} type='button'>Entrar</ButtonLogin>
+        <ButtonLogin onClick={handleEntrar} type='button'>Cadastrar</ButtonLogin>
+        {/* <button onClick={handleEntrar} type='button'>Entrar</button> */}
       </form>
     </div >
   )

@@ -1,8 +1,9 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
+import { InputLogin } from './components/InputLogin'
 // import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
-  const inputPasswordRef = useRef<HTMLInputElement>(null)
+  // const inputPasswordRef = useRef<HTMLInputElement>(null)
 
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
@@ -34,14 +35,36 @@ export const Login = () => {
     <div>
       <form action="">
         <p>Quantidade de caracteres no email: {emailLength}</p>
-        <label htmlFor="">
+
+        <InputLogin
+          label='Email'
+          value={email}
+          onChange={newValue => setEmail(newValue)}
+        // onPressEnter={() => inputPasswordRef.current?.focus()}
+        />
+        <InputLogin
+          type='password'
+          label='Senha'
+          value={senha}
+          onChange={newValue => setSenha(newValue)}
+        />
+        {/* <label htmlFor="">
           <span>Email:</span>
-          <input onKeyDown={e => e.key === 'Enter' ? inputPasswordRef.current?.focus() : undefined} value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <label htmlFor="">
+          <input 
+          onKeyDown={e => e.key === 'Enter' ? inputPasswordRef.current?.focus() : undefined} 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          />
+        </label> */}
+        {/* <label htmlFor="">
           <span>Senha:</span>
-          <input ref={inputPasswordRef} value={senha} onChange={(e) => setSenha(e.target.value)} type="password" />
-        </label>
+          <input
+            ref={inputPasswordRef}
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)} 
+            type="password"
+          /> */}
+        {/* </label> */}
         <button onClick={handleEntrar} type='button'>Entrar</button>
       </form>
     </div >

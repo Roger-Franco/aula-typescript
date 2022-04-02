@@ -3,7 +3,7 @@ import { InputLogin } from './components/InputLogin'
 // import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
-  // const inputPasswordRef = useRef<HTMLInputElement>(null)
+  const inputPasswordRef = useRef<HTMLInputElement>(null)
 
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
@@ -40,12 +40,13 @@ export const Login = () => {
           label='Email'
           value={email}
           onChange={newValue => setEmail(newValue)}
-        // onPressEnter={() => inputPasswordRef.current?.focus()}
+          onPressEnter={() => inputPasswordRef.current?.focus()}
         />
         <InputLogin
           type='password'
           label='Senha'
           value={senha}
+          ref={inputPasswordRef}
           onChange={newValue => setSenha(newValue)}
         />
         {/* <label htmlFor="">

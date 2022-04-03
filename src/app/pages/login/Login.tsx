@@ -1,10 +1,13 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useContext, useMemo, useRef, useState } from 'react'
+import { UsuarioLogadoContext } from '../../shared/contexts'
 import { ButtonLogin } from './components/ButtonLogin'
 import { InputLogin } from './components/InputLogin'
 // import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
   const inputPasswordRef = useRef<HTMLInputElement>(null)
+
+  const usuarioLogadoContext = useContext(UsuarioLogadoContext)
 
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
@@ -36,6 +39,7 @@ export const Login = () => {
     <div>
       <form action="">
         <p>Quantidade de caracteres no email: {emailLength}</p>
+        <p>{usuarioLogadoContext.nomeDoUsuario}</p>
 
         <InputLogin
           label='Email'

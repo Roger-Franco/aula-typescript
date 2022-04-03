@@ -10,7 +10,7 @@ export const UsuarioLogadoContext = createContext<IUsuarioLogadoContextData>({} 
 export const UsuarioLogadoProvider: React.FC = ({ children }) => {
 
   return (
-    <UsuarioLogadoContext.Provider value={{ nomeDoUsuario: 'Roger' }}>
+    <UsuarioLogadoContext.Provider value={{ nomeDoUsuario: 'Roger Frank' }}>
       {children}
     </UsuarioLogadoContext.Provider>
   )

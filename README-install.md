@@ -4,4 +4,4 @@ https://www.youtube.com/watch?v=1bEbBkWc4-I&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80
 
 Aula atual:
 
-https://www.youtube.com/watch?v=p2V-iWxgVKE&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80iOm&index=20
+https://www.youtube.com/watch?v=YMxc9biU9ms&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80iOm&index=21

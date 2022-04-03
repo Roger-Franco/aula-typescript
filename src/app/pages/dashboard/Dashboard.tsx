@@ -6,7 +6,7 @@ import { useUsuarioLogado } from '../../shared/hooks'
 export const Dashboard = () => {
   const counterRef = useRef({ counter: 0 })
 
-  const usuarioLogadoContext = useUsuarioLogado()
+  const { nomeDoUsuario, logOut } = useUsuarioLogado()
   // Usando aqui um react hook customizado 
 
   // const usuarioLogadoContext = useContext(UsuarioLogadoContext)
@@ -14,11 +14,12 @@ export const Dashboard = () => {
   return (
     <>
       <h1>Dashboard</h1>
-      <p>{usuarioLogadoContext.nomeDoUsuario}</p>
+      <p>{nomeDoUsuario}</p>
       <p>Contador: {counterRef.current.counter}</p>
 
       <button onClick={() => counterRef.current.counter++}>Somar</button>
       <button onClick={() => console.log(counterRef.current.counter)}>Somar</button>
+      <button onClick={logOut}>logOut</button>
       <Link to="/entrar" >Login</Link>
     </>
   )

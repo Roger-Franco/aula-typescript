@@ -4,4 +4,13 @@ https://www.youtube.com/watch?v=1bEbBkWc4-I&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80
 
 Aula atual:
 
-https://www.youtube.com/watch?v=ZGh4F2EQq1Q&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80iOm&index=22
+https://www.youtube.com/watch?v=GruUvNF6OnM&list=PL29TaWXah3iZktD5o1IHbc7JDqG_80iOm&index=23
+
+
+JSON Server:
+
+https://www.npmjs.com/package/json-server
+
+yarn add -D json-server
+
+json-server --watch db.json

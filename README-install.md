@@ -14,3 +14,5 @@ https://www.npmjs.com/package/json-server
 yarn add -D json-server
 
 json-server --watch ./mock/db.json
+
+yarn add axios

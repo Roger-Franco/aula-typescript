@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react'
 
-interface Itarefa {
+interface ITarefa {
   id: number
   title: string;
   isCompleted: boolean;
 }
 
 export const Dashboard = () => {
-  const [lista, setLista] = useState<Itarefa[]>([])
+  const [lista, setLista] = useState<ITarefa[]>([])
 
   const handleInputKeyDown: React.KeyboardEventHandler<HTMLInputElement> = useCallback((e) => {
     if (e.key === 'Enter') {

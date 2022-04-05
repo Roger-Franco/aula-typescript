@@ -1,12 +1,13 @@
 import { useCallback, useState } from 'react'
 
-interface IListeItem {
+interface Itarefa {
+  id: number
   title: string;
-  isSelected: boolean;
+  isCompleted: boolean;
 }
 
 export const Dashboard = () => {
-  const [lista, setLista] = useState<IListeItem[]>([])
+  const [lista, setLista] = useState<Itarefa[]>([])
 
   const handleInputKeyDown: React.KeyboardEventHandler<HTMLInputElement> = useCallback((e) => {
     if (e.key === 'Enter') {
@@ -23,8 +24,9 @@ export const Dashboard = () => {
         return [
           ...oldlista,
           {
+            id: oldlista.length,
             title: value,
-            isSelected: false,
+            isCompleted: false,
           }
         ];
       })
@@ -35,23 +37,23 @@ export const Dashboard = () => {
     <div>
       <p>Lista</p>
       <input onKeyDown={handleInputKeyDown} />
-      <p>{lista.filter((listeItem) => listeItem.isSelected).length}</p>
+      <p>{lista.filter((listeItem) => listeItem.isCompleted).length}</p>
       <ul>
         {lista.map((listItem) => {
           return (
-            <li key={listItem.title}>
+            <li key={listItem.id}>
               <input
                 type="checkbox"
-                checked={listItem.isSelected}
+                checked={listItem.isCompleted}
                 onChange={() => {
                   setLista(oldLista => {
                     return oldLista.map(oldListItem => {
-                      const newIsSelected = oldListItem.title === listItem.title
-                        ? !oldListItem.isSelected
-                        : oldListItem.isSelected
+                      const newIsCompleted = oldListItem.title === listItem.title
+                        ? !oldListItem.isCompleted
+                        : oldListItem.isCompleted
                       return {
                         ...oldListItem,
-                        isSelected: newIsSelected
+                        isCompleted: newIsCompleted
                       }
                     })
                   })

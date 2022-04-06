@@ -27,21 +27,25 @@ export const Dashboard = () => {
 
       e.currentTarget.value = ''
 
-      setLista((oldlista) => {
+      if (lista.some((listItem) => listItem.title === value)) return;
 
-        if (oldlista.some((listItem) => listItem.title === value)) return oldlista;
-
-        return [
-          ...oldlista,
-          {
-            id: oldlista.length,
-            title: value,
-            isCompleted: false,
+      TarefasService.create({ title: value, isCompleted: false })
+        .then((result) => {
+          if (result instanceof ApiException) {
+            alert(result.message)
+          } else {
+            setLista((oldlista) => {
+              return [
+                ...oldlista,
+                result,
+              ];
+            })
           }
-        ];
-      })
+        })
+
+
     }
-  }, [])
+  }, [lista])
 
   return (
     <div>
